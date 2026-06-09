@@ -1,0 +1,11 @@
+CHIP CSA3to2 {
+    IN  a, b, c;       
+    OUT sum, carry;       
+
+    PARTS:
+    Xor(a=a, b=b, out=axorb);
+    Xor(a=axorb, b=c, out=sum);
+    And(a=a, b=b, out=aandb);
+    And(a=axorb, b=c, out=candaxorb);
+    Or(a=aandb, b=candaxorb, out=carry);
+}

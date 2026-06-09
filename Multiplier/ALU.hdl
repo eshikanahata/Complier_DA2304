@@ -1,0 +1,35 @@
+CHIP ALU {
+    IN x[16], y[16], zx, nx, zy, ny, f, no;
+    OUT
+        out[16], zr, ng;
+
+    PARTS:
+    And(a=zx, b=nx, out=zxnx);
+    And(a=zy, b=ny, out=zyny);
+    And(a=f, b=no, out=fno);
+    And(a=zxnx, b=zyny, out=zxnxzyny);
+    And(a=zxnxzyny, b=fno, out=multiplymode);
+
+    Mux16(a=x, b[0..15]=false, sel=zx, out=xzeroed);
+    Not16(in=xzeroed, out=xzeroedinv);
+    Mux16(a=xzeroed, b=xzeroedinv, sel=nx, out=xprepped);
+
+    Mux16(a=y, b[0..15]=false, sel=zy, out=yzeroed);
+    Not16(in=yzeroed, out=yzeroedinv);
+    Mux16(a=yzeroed, b=yzeroedinv, sel=ny, out=yprepped);
+
+    And16(a=xprepped, b=yprepped, out=andresult);
+    Add16(a=xprepped, b=yprepped, out=addresult);
+    Mux16(a=andresult, b=addresult, sel=f, out=fresult);
+    Not16(in=fresult, out=fresultinv);
+    Mux16(a=fresult, b=fresultinv, sel=no, out=standardout);
+
+    Multiplier32(a=x, b=y, low=productlow, high=producthigh);
+    Mux16(a=standardout, b=productlow, sel=multiplymode, out=out, out[15]=isnegative, out[0..7]=outlow8, out[8..15]=outhigh8);
+
+    Or(a=isnegative, b=false, out=ng);
+    Or8Way(in=outlow8, out=anylowbit);
+    Or8Way(in=outhigh8, out=anyhighbit);
+    Or(a=anylowbit, b=anyhighbit, out=nonzero);
+    Not(in=nonzero, out=zr);
+}

@@ -1,0 +1,12 @@
+CHIP RAM2 {
+    IN in[16], load1, load2;
+    OUT out[16];
+
+    PARTS:
+ 
+    DMux(in=load1, sel=load2, a=first, b=second);
+
+    Register_8_Bit(in=in[0..7],  load=first,  out=out[0..7]);
+    Register_8_Bit(in=in[8..15], load=second, out=out[8..15]);
+}
+ 

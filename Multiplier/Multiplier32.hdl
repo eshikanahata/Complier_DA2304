@@ -1,0 +1,778 @@
+CHIP Multiplier32 {
+    IN  a[16], b[16];
+    OUT low[16], high[16];       
+
+    PARTS:
+
+    And(a=a[0],  b=b[0],  out=pa0b0);
+
+    And(a=a[0],  b=b[1],  out=pa0b1);
+    And(a=a[1],  b=b[0],  out=pa1b0);
+
+    And(a=a[0],  b=b[2],  out=pa0b2);
+    And(a=a[1],  b=b[1],  out=pa1b1);
+    And(a=a[2],  b=b[0],  out=pa2b0);
+
+    And(a=a[0],  b=b[3],  out=pa0b3);
+    And(a=a[1],  b=b[2],  out=pa1b2);
+    And(a=a[2],  b=b[1],  out=pa2b1);
+    And(a=a[3],  b=b[0],  out=pa3b0);
+
+    And(a=a[0],  b=b[4],  out=pa0b4);
+    And(a=a[1],  b=b[3],  out=pa1b3);
+    And(a=a[2],  b=b[2],  out=pa2b2);
+    And(a=a[3],  b=b[1],  out=pa3b1);
+    And(a=a[4],  b=b[0],  out=pa4b0);
+
+    And(a=a[0],  b=b[5],  out=pa0b5);
+    And(a=a[1],  b=b[4],  out=pa1b4);
+    And(a=a[2],  b=b[3],  out=pa2b3);
+    And(a=a[3],  b=b[2],  out=pa3b2);
+    And(a=a[4],  b=b[1],  out=pa4b1);
+    And(a=a[5],  b=b[0],  out=pa5b0);
+
+    And(a=a[0],  b=b[6],  out=pa0b6);
+    And(a=a[1],  b=b[5],  out=pa1b5);
+    And(a=a[2],  b=b[4],  out=pa2b4);
+    And(a=a[3],  b=b[3],  out=pa3b3);
+    And(a=a[4],  b=b[2],  out=pa4b2);
+    And(a=a[5],  b=b[1],  out=pa5b1);
+    And(a=a[6],  b=b[0],  out=pa6b0);
+
+    And(a=a[0],  b=b[7],  out=pa0b7);
+    And(a=a[1],  b=b[6],  out=pa1b6);
+    And(a=a[2],  b=b[5],  out=pa2b5);
+    And(a=a[3],  b=b[4],  out=pa3b4);
+    And(a=a[4],  b=b[3],  out=pa4b3);
+    And(a=a[5],  b=b[2],  out=pa5b2);
+    And(a=a[6],  b=b[1],  out=pa6b1);
+    And(a=a[7],  b=b[0],  out=pa7b0);
+
+    And(a=a[0],  b=b[8],  out=pa0b8);
+    And(a=a[1],  b=b[7],  out=pa1b7);
+    And(a=a[2],  b=b[6],  out=pa2b6);
+    And(a=a[3],  b=b[5],  out=pa3b5);
+    And(a=a[4],  b=b[4],  out=pa4b4);
+    And(a=a[5],  b=b[3],  out=pa5b3);
+    And(a=a[6],  b=b[2],  out=pa6b2);
+    And(a=a[7],  b=b[1],  out=pa7b1);
+    And(a=a[8],  b=b[0],  out=pa8b0);
+
+    And(a=a[0],  b=b[9],  out=pa0b9);
+    And(a=a[1],  b=b[8],  out=pa1b8);
+    And(a=a[2],  b=b[7],  out=pa2b7);
+    And(a=a[3],  b=b[6],  out=pa3b6);
+    And(a=a[4],  b=b[5],  out=pa4b5);
+    And(a=a[5],  b=b[4],  out=pa5b4);
+    And(a=a[6],  b=b[3],  out=pa6b3);
+    And(a=a[7],  b=b[2],  out=pa7b2);
+    And(a=a[8],  b=b[1],  out=pa8b1);
+    And(a=a[9],  b=b[0],  out=pa9b0);
+
+    And(a=a[0],  b=b[10], out=pa0b10);
+    And(a=a[1],  b=b[9],  out=pa1b9);
+    And(a=a[2],  b=b[8],  out=pa2b8);
+    And(a=a[3],  b=b[7],  out=pa3b7);
+    And(a=a[4],  b=b[6],  out=pa4b6);
+    And(a=a[5],  b=b[5],  out=pa5b5);
+    And(a=a[6],  b=b[4],  out=pa6b4);
+    And(a=a[7],  b=b[3],  out=pa7b3);
+    And(a=a[8],  b=b[2],  out=pa8b2);
+    And(a=a[9],  b=b[1],  out=pa9b1);
+    And(a=a[10], b=b[0],  out=pa10b0);
+
+    And(a=a[0],  b=b[11], out=pa0b11);
+    And(a=a[1],  b=b[10], out=pa1b10);
+    And(a=a[2],  b=b[9],  out=pa2b9);
+    And(a=a[3],  b=b[8],  out=pa3b8);
+    And(a=a[4],  b=b[7],  out=pa4b7);
+    And(a=a[5],  b=b[6],  out=pa5b6);
+    And(a=a[6],  b=b[5],  out=pa6b5);
+    And(a=a[7],  b=b[4],  out=pa7b4);
+    And(a=a[8],  b=b[3],  out=pa8b3);
+    And(a=a[9],  b=b[2],  out=pa9b2);
+    And(a=a[10], b=b[1],  out=pa10b1);
+    And(a=a[11], b=b[0],  out=pa11b0);
+
+    And(a=a[0],  b=b[12], out=pa0b12);
+    And(a=a[1],  b=b[11], out=pa1b11);
+    And(a=a[2],  b=b[10], out=pa2b10);
+    And(a=a[3],  b=b[9],  out=pa3b9);
+    And(a=a[4],  b=b[8],  out=pa4b8);
+    And(a=a[5],  b=b[7],  out=pa5b7);
+    And(a=a[6],  b=b[6],  out=pa6b6);
+    And(a=a[7],  b=b[5],  out=pa7b5);
+    And(a=a[8],  b=b[4],  out=pa8b4);
+    And(a=a[9],  b=b[3],  out=pa9b3);
+    And(a=a[10], b=b[2],  out=pa10b2);
+    And(a=a[11], b=b[1],  out=pa11b1);
+    And(a=a[12], b=b[0],  out=pa12b0);
+
+    And(a=a[0],  b=b[13], out=pa0b13);
+    And(a=a[1],  b=b[12], out=pa1b12);
+    And(a=a[2],  b=b[11], out=pa2b11);
+    And(a=a[3],  b=b[10], out=pa3b10);
+    And(a=a[4],  b=b[9],  out=pa4b9);
+    And(a=a[5],  b=b[8],  out=pa5b8);
+    And(a=a[6],  b=b[7],  out=pa6b7);
+    And(a=a[7],  b=b[6],  out=pa7b6);
+    And(a=a[8],  b=b[5],  out=pa8b5);
+    And(a=a[9],  b=b[4],  out=pa9b4);
+    And(a=a[10], b=b[3],  out=pa10b3);
+    And(a=a[11], b=b[2],  out=pa11b2);
+    And(a=a[12], b=b[1],  out=pa12b1);
+    And(a=a[13], b=b[0],  out=pa13b0);
+
+    And(a=a[0],  b=b[14], out=pa0b14);
+    And(a=a[1],  b=b[13], out=pa1b13);
+    And(a=a[2],  b=b[12], out=pa2b12);
+    And(a=a[3],  b=b[11], out=pa3b11);
+    And(a=a[4],  b=b[10], out=pa4b10);
+    And(a=a[5],  b=b[9],  out=pa5b9);
+    And(a=a[6],  b=b[8],  out=pa6b8);
+    And(a=a[7],  b=b[7],  out=pa7b7);
+    And(a=a[8],  b=b[6],  out=pa8b6);
+    And(a=a[9],  b=b[5],  out=pa9b5);
+    And(a=a[10], b=b[4],  out=pa10b4);
+    And(a=a[11], b=b[3],  out=pa11b3);
+    And(a=a[12], b=b[2],  out=pa12b2);
+    And(a=a[13], b=b[1],  out=pa13b1);
+    And(a=a[14], b=b[0],  out=pa14b0);
+
+    And(a=a[0],  b=b[15], out=pa0b15);
+    And(a=a[1],  b=b[14], out=pa1b14);
+    And(a=a[2],  b=b[13], out=pa2b13);
+    And(a=a[3],  b=b[12], out=pa3b12);
+    And(a=a[4],  b=b[11], out=pa4b11);
+    And(a=a[5],  b=b[10], out=pa5b10);
+    And(a=a[6],  b=b[9],  out=pa6b9);
+    And(a=a[7],  b=b[8],  out=pa7b8);
+    And(a=a[8],  b=b[7],  out=pa8b7);
+    And(a=a[9],  b=b[6],  out=pa9b6);
+    And(a=a[10], b=b[5],  out=pa10b5);
+    And(a=a[11], b=b[4],  out=pa11b4);
+    And(a=a[12], b=b[3],  out=pa12b3);
+    And(a=a[13], b=b[2],  out=pa13b2);
+    And(a=a[14], b=b[1],  out=pa14b1);
+    And(a=a[15], b=b[0],  out=pa15b0);
+
+    And(a=a[1],  b=b[15], out=pa1b15);
+    And(a=a[2],  b=b[14], out=pa2b14);
+    And(a=a[3],  b=b[13], out=pa3b13);
+    And(a=a[4],  b=b[12], out=pa4b12);
+    And(a=a[5],  b=b[11], out=pa5b11);
+    And(a=a[6],  b=b[10], out=pa6b10);
+    And(a=a[7],  b=b[9],  out=pa7b9);
+    And(a=a[8],  b=b[8],  out=pa8b8);
+    And(a=a[9],  b=b[7],  out=pa9b7);
+    And(a=a[10], b=b[6],  out=pa10b6);
+    And(a=a[11], b=b[5],  out=pa11b5);
+    And(a=a[12], b=b[4],  out=pa12b4);
+    And(a=a[13], b=b[3],  out=pa13b3);
+    And(a=a[14], b=b[2],  out=pa14b2);
+    And(a=a[15], b=b[1],  out=pa15b1);
+
+    And(a=a[2],  b=b[15], out=pa2b15);
+    And(a=a[3],  b=b[14], out=pa3b14);
+    And(a=a[4],  b=b[13], out=pa4b13);
+    And(a=a[5],  b=b[12], out=pa5b12);
+    And(a=a[6],  b=b[11], out=pa6b11);
+    And(a=a[7],  b=b[10], out=pa7b10);
+    And(a=a[8],  b=b[9],  out=pa8b9);
+    And(a=a[9],  b=b[8],  out=pa9b8);
+    And(a=a[10], b=b[7],  out=pa10b7);
+    And(a=a[11], b=b[6],  out=pa11b6);
+    And(a=a[12], b=b[5],  out=pa12b5);
+    And(a=a[13], b=b[4],  out=pa13b4);
+    And(a=a[14], b=b[3],  out=pa14b3);
+    And(a=a[15], b=b[2],  out=pa15b2);
+
+    And(a=a[3],  b=b[15], out=pa3b15);
+    And(a=a[4],  b=b[14], out=pa4b14);
+    And(a=a[5],  b=b[13], out=pa5b13);
+    And(a=a[6],  b=b[12], out=pa6b12);
+    And(a=a[7],  b=b[11], out=pa7b11);
+    And(a=a[8],  b=b[10], out=pa8b10);
+    And(a=a[9],  b=b[9],  out=pa9b9);
+    And(a=a[10], b=b[8],  out=pa10b8);
+    And(a=a[11], b=b[7],  out=pa11b7);
+    And(a=a[12], b=b[6],  out=pa12b6);
+    And(a=a[13], b=b[5],  out=pa13b5);
+    And(a=a[14], b=b[4],  out=pa14b4);
+    And(a=a[15], b=b[3],  out=pa15b3);
+
+    And(a=a[4],  b=b[15], out=pa4b15);
+    And(a=a[5],  b=b[14], out=pa5b14);
+    And(a=a[6],  b=b[13], out=pa6b13);
+    And(a=a[7],  b=b[12], out=pa7b12);
+    And(a=a[8],  b=b[11], out=pa8b11);
+    And(a=a[9],  b=b[10], out=pa9b10);
+    And(a=a[10], b=b[9],  out=pa10b9);
+    And(a=a[11], b=b[8],  out=pa11b8);
+    And(a=a[12], b=b[7],  out=pa12b7);
+    And(a=a[13], b=b[6],  out=pa13b6);
+    And(a=a[14], b=b[5],  out=pa14b5);
+    And(a=a[15], b=b[4],  out=pa15b4);
+
+    And(a=a[5],  b=b[15], out=pa5b15);
+    And(a=a[6],  b=b[14], out=pa6b14);
+    And(a=a[7],  b=b[13], out=pa7b13);
+    And(a=a[8],  b=b[12], out=pa8b12);
+    And(a=a[9],  b=b[11], out=pa9b11);
+    And(a=a[10], b=b[10], out=pa10b10);
+    And(a=a[11], b=b[9],  out=pa11b9);
+    And(a=a[12], b=b[8],  out=pa12b8);
+    And(a=a[13], b=b[7],  out=pa13b7);
+    And(a=a[14], b=b[6],  out=pa14b6);
+    And(a=a[15], b=b[5],  out=pa15b5);
+
+    And(a=a[6],  b=b[15], out=pa6b15);
+    And(a=a[7],  b=b[14], out=pa7b14);
+    And(a=a[8],  b=b[13], out=pa8b13);
+    And(a=a[9],  b=b[12], out=pa9b12);
+    And(a=a[10], b=b[11], out=pa10b11);
+    And(a=a[11], b=b[10], out=pa11b10);
+    And(a=a[12], b=b[9],  out=pa12b9);
+    And(a=a[13], b=b[8],  out=pa13b8);
+    And(a=a[14], b=b[7],  out=pa14b7);
+    And(a=a[15], b=b[6],  out=pa15b6);
+
+    And(a=a[7],  b=b[15], out=pa7b15);
+    And(a=a[8],  b=b[14], out=pa8b14);
+    And(a=a[9],  b=b[13], out=pa9b13);
+    And(a=a[10], b=b[12], out=pa10b12);
+    And(a=a[11], b=b[11], out=pa11b11);
+    And(a=a[12], b=b[10], out=pa12b10);
+    And(a=a[13], b=b[9],  out=pa13b9);
+    And(a=a[14], b=b[8],  out=pa14b8);
+    And(a=a[15], b=b[7],  out=pa15b7);
+
+    And(a=a[8],  b=b[15], out=pa8b15);
+    And(a=a[9],  b=b[14], out=pa9b14);
+    And(a=a[10], b=b[13], out=pa10b13);
+    And(a=a[11], b=b[12], out=pa11b12);
+    And(a=a[12], b=b[11], out=pa12b11);
+    And(a=a[13], b=b[10], out=pa13b10);
+    And(a=a[14], b=b[9],  out=pa14b9);
+    And(a=a[15], b=b[8],  out=pa15b8);
+
+    And(a=a[9],  b=b[15], out=pa9b15);
+    And(a=a[10], b=b[14], out=pa10b14);
+    And(a=a[11], b=b[13], out=pa11b13);
+    And(a=a[12], b=b[12], out=pa12b12);
+    And(a=a[13], b=b[11], out=pa13b11);
+    And(a=a[14], b=b[10], out=pa14b10);
+    And(a=a[15], b=b[9],  out=pa15b9);
+
+    And(a=a[10], b=b[15], out=pa10b15);
+    And(a=a[11], b=b[14], out=pa11b14);
+    And(a=a[12], b=b[13], out=pa12b13);
+    And(a=a[13], b=b[12], out=pa13b12);
+    And(a=a[14], b=b[11], out=pa14b11);
+    And(a=a[15], b=b[10], out=pa15b10);
+
+    And(a=a[11], b=b[15], out=pa11b15);
+    And(a=a[12], b=b[14], out=pa12b14);
+    And(a=a[13], b=b[13], out=pa13b13);
+    And(a=a[14], b=b[12], out=pa14b12);
+    And(a=a[15], b=b[11], out=pa15b11);
+
+    And(a=a[12], b=b[15], out=pa12b15);
+    And(a=a[13], b=b[14], out=pa13b14);
+    And(a=a[14], b=b[13], out=pa14b13);
+    And(a=a[15], b=b[12], out=pa15b12);
+
+    And(a=a[13], b=b[15], out=pa13b15);
+    And(a=a[14], b=b[14], out=pa14b14);
+    And(a=a[15], b=b[13], out=pa15b13);
+
+    And(a=a[14], b=b[15], out=pa14b15);
+    And(a=a[15], b=b[14], out=pa15b14);
+
+    And(a=a[15], b=b[15], out=pa15b15);
+
+
+
+
+
+
+
+    HalfAdder(a=pa0b1, b=pa1b0, sum=s1b1i0, carry=c1b1i0);
+
+    CSA3to2(a=pa0b2, b=pa1b1, c=pa2b0, sum=s1b2i0, carry=c1b2i0);
+
+    CSA3to2(a=pa0b3, b=pa1b2, c=pa2b1, sum=s1b3i0, carry=c1b3i0);
+
+    CSA3to2(a=pa0b4, b=pa1b3, c=pa2b2, sum=s1b4i0, carry=c1b4i0);
+    HalfAdder(a=pa3b1, b=pa4b0, sum=s1b4i1, carry=c1b4i1);
+
+    CSA3to2(a=pa0b5, b=pa1b4, c=pa2b3, sum=s1b5i0, carry=c1b5i0);
+    CSA3to2(a=pa3b2, b=pa4b1, c=pa5b0, sum=s1b5i1, carry=c1b5i1);
+
+    CSA3to2(a=pa0b6, b=pa1b5, c=pa2b4, sum=s1b6i0, carry=c1b6i0);
+    CSA3to2(a=pa3b3, b=pa4b2, c=pa5b1, sum=s1b6i1, carry=c1b6i1);
+
+    CSA3to2(a=pa0b7, b=pa1b6, c=pa2b5, sum=s1b7i0, carry=c1b7i0);
+    CSA3to2(a=pa3b4, b=pa4b3, c=pa5b2, sum=s1b7i1, carry=c1b7i1);
+    HalfAdder(a=pa6b1, b=pa7b0, sum=s1b7i2, carry=c1b7i2);
+
+    CSA3to2(a=pa0b8, b=pa1b7, c=pa2b6, sum=s1b8i0, carry=c1b8i0);
+    CSA3to2(a=pa3b5, b=pa4b4, c=pa5b3, sum=s1b8i1, carry=c1b8i1);
+    CSA3to2(a=pa6b2, b=pa7b1, c=pa8b0, sum=s1b8i2, carry=c1b8i2);
+
+    CSA3to2(a=pa0b9, b=pa1b8, c=pa2b7, sum=s1b9i0, carry=c1b9i0);
+    CSA3to2(a=pa3b6, b=pa4b5, c=pa5b4, sum=s1b9i1, carry=c1b9i1);
+    CSA3to2(a=pa6b3, b=pa7b2, c=pa8b1, sum=s1b9i2, carry=c1b9i2);
+
+    CSA3to2(a=pa0b10, b=pa1b9,  c=pa2b8,  sum=s1b10i0, carry=c1b10i0);
+    CSA3to2(a=pa3b7,  b=pa4b6,  c=pa5b5,  sum=s1b10i1, carry=c1b10i1);
+    CSA3to2(a=pa6b4,  b=pa7b3,  c=pa8b2,  sum=s1b10i2, carry=c1b10i2);
+    HalfAdder(a=pa9b1, b=pa10b0, sum=s1b10i3, carry=c1b10i3);
+
+    CSA3to2(a=pa0b11, b=pa1b10, c=pa2b9,  sum=s1b11i0, carry=c1b11i0);
+    CSA3to2(a=pa3b8,  b=pa4b7,  c=pa5b6,  sum=s1b11i1, carry=c1b11i1);
+    CSA3to2(a=pa6b5,  b=pa7b4,  c=pa8b3,  sum=s1b11i2, carry=c1b11i2);
+    CSA3to2(a=pa9b2,  b=pa10b1, c=pa11b0, sum=s1b11i3, carry=c1b11i3);
+
+    CSA3to2(a=pa0b12, b=pa1b11, c=pa2b10, sum=s1b12i0, carry=c1b12i0);
+    CSA3to2(a=pa3b9,  b=pa4b8,  c=pa5b7,  sum=s1b12i1, carry=c1b12i1);
+    CSA3to2(a=pa6b6,  b=pa7b5,  c=pa8b4,  sum=s1b12i2, carry=c1b12i2);
+    CSA3to2(a=pa9b3,  b=pa10b2, c=pa11b1, sum=s1b12i3, carry=c1b12i3);
+
+    CSA3to2(a=pa0b13, b=pa1b12, c=pa2b11, sum=s1b13i0, carry=c1b13i0);
+    CSA3to2(a=pa3b10, b=pa4b9,  c=pa5b8,  sum=s1b13i1, carry=c1b13i1);
+    CSA3to2(a=pa6b7,  b=pa7b6,  c=pa8b5,  sum=s1b13i2, carry=c1b13i2);
+    CSA3to2(a=pa9b4,  b=pa10b3, c=pa11b2, sum=s1b13i3, carry=c1b13i3);
+    HalfAdder(a=pa12b1, b=pa13b0, sum=s1b13i4, carry=c1b13i4);
+
+    CSA3to2(a=pa0b14, b=pa1b13, c=pa2b12, sum=s1b14i0, carry=c1b14i0);
+    CSA3to2(a=pa3b11, b=pa4b10, c=pa5b9,  sum=s1b14i1, carry=c1b14i1);
+    CSA3to2(a=pa6b8,  b=pa7b7,  c=pa8b6,  sum=s1b14i2, carry=c1b14i2);
+    CSA3to2(a=pa9b5,  b=pa10b4, c=pa11b3, sum=s1b14i3, carry=c1b14i3);
+    CSA3to2(a=pa12b2, b=pa13b1, c=pa14b0, sum=s1b14i4, carry=c1b14i4);
+
+    CSA3to2(a=pa0b15, b=pa1b14, c=pa2b13, sum=s1b15i0, carry=c1b15i0);
+    CSA3to2(a=pa3b12, b=pa4b11, c=pa5b10, sum=s1b15i1, carry=c1b15i1);
+    CSA3to2(a=pa6b9,  b=pa7b8,  c=pa8b7,  sum=s1b15i2, carry=c1b15i2);
+    CSA3to2(a=pa9b6,  b=pa10b5, c=pa11b4, sum=s1b15i3, carry=c1b15i3);
+    CSA3to2(a=pa12b3, b=pa13b2, c=pa14b1, sum=s1b15i4, carry=c1b15i4);
+
+    CSA3to2(a=pa1b15, b=pa2b14, c=pa3b13, sum=s1b16i0, carry=c1b16i0);
+    CSA3to2(a=pa4b12, b=pa5b11, c=pa6b10, sum=s1b16i1, carry=c1b16i1);
+    CSA3to2(a=pa7b9,  b=pa8b8,  c=pa9b7,  sum=s1b16i2, carry=c1b16i2);
+    CSA3to2(a=pa10b6, b=pa11b5, c=pa12b4, sum=s1b16i3, carry=c1b16i3);
+    CSA3to2(a=pa13b3, b=pa14b2, c=pa15b1, sum=s1b16i4, carry=c1b16i4);
+
+    CSA3to2(a=pa2b15, b=pa3b14, c=pa4b13, sum=s1b17i0, carry=c1b17i0);
+    CSA3to2(a=pa5b12, b=pa6b11, c=pa7b10, sum=s1b17i1, carry=c1b17i1);
+    CSA3to2(a=pa8b9,  b=pa9b8,  c=pa10b7, sum=s1b17i2, carry=c1b17i2);
+    CSA3to2(a=pa11b6, b=pa12b5, c=pa13b4, sum=s1b17i3, carry=c1b17i3);
+    HalfAdder(a=pa14b3, b=pa15b2, sum=s1b17i4, carry=c1b17i4);
+
+    CSA3to2(a=pa3b15, b=pa4b14, c=pa5b13, sum=s1b18i0, carry=c1b18i0);
+    CSA3to2(a=pa6b12, b=pa7b11, c=pa8b10, sum=s1b18i1, carry=c1b18i1);
+    CSA3to2(a=pa9b9,  b=pa10b8, c=pa11b7, sum=s1b18i2, carry=c1b18i2);
+    CSA3to2(a=pa12b6, b=pa13b5, c=pa14b4, sum=s1b18i3, carry=c1b18i3);
+
+    CSA3to2(a=pa4b15, b=pa5b14, c=pa6b13, sum=s1b19i0, carry=c1b19i0);
+    CSA3to2(a=pa7b12, b=pa8b11, c=pa9b10, sum=s1b19i1, carry=c1b19i1);
+    CSA3to2(a=pa10b9, b=pa11b8, c=pa12b7, sum=s1b19i2, carry=c1b19i2);
+    CSA3to2(a=pa13b6, b=pa14b5, c=pa15b4, sum=s1b19i3, carry=c1b19i3);
+
+    CSA3to2(a=pa5b15, b=pa6b14, c=pa7b13, sum=s1b20i0, carry=c1b20i0);
+    CSA3to2(a=pa8b12, b=pa9b11, c=pa10b10, sum=s1b20i1, carry=c1b20i1);
+    CSA3to2(a=pa11b9, b=pa12b8, c=pa13b7, sum=s1b20i2, carry=c1b20i2);
+    HalfAdder(a=pa14b6, b=pa15b5, sum=s1b20i3, carry=c1b20i3);
+
+    CSA3to2(a=pa6b15, b=pa7b14, c=pa8b13, sum=s1b21i0, carry=c1b21i0);
+    CSA3to2(a=pa9b12, b=pa10b11, c=pa11b10, sum=s1b21i1, carry=c1b21i1);
+    CSA3to2(a=pa12b9, b=pa13b8, c=pa14b7, sum=s1b21i2, carry=c1b21i2);
+
+    CSA3to2(a=pa7b15, b=pa8b14, c=pa9b13, sum=s1b22i0, carry=c1b22i0);
+    CSA3to2(a=pa10b12, b=pa11b11, c=pa12b10, sum=s1b22i1, carry=c1b22i1);
+    CSA3to2(a=pa13b9, b=pa14b8, c=pa15b7, sum=s1b22i2, carry=c1b22i2);
+
+    CSA3to2(a=pa8b15, b=pa9b14, c=pa10b13, sum=s1b23i0, carry=c1b23i0);
+    CSA3to2(a=pa11b12, b=pa12b11, c=pa13b10, sum=s1b23i1, carry=c1b23i1);
+    HalfAdder(a=pa14b9, b=pa15b8, sum=s1b23i2, carry=c1b23i2);
+
+    CSA3to2(a=pa9b15, b=pa10b14, c=pa11b13, sum=s1b24i0, carry=c1b24i0);
+    CSA3to2(a=pa12b12, b=pa13b11, c=pa14b10, sum=s1b24i1, carry=c1b24i1);
+
+    CSA3to2(a=pa10b15, b=pa11b14, c=pa12b13, sum=s1b25i0, carry=c1b25i0);
+    CSA3to2(a=pa13b12, b=pa14b11, c=pa15b10, sum=s1b25i1, carry=c1b25i1);
+
+    CSA3to2(a=pa11b15, b=pa12b14, c=pa13b13, sum=s1b26i0, carry=c1b26i0);
+    HalfAdder(a=pa14b12, b=pa15b11, sum=s1b26i1, carry=c1b26i1);
+
+    CSA3to2(a=pa12b15, b=pa13b14, c=pa14b13, sum=s1b27i0, carry=c1b27i0);
+
+    CSA3to2(a=pa13b15, b=pa14b14, c=pa15b13, sum=s1b28i0, carry=c1b28i0);
+
+    HalfAdder(a=pa14b15, b=pa15b14, sum=s1b29i0, carry=c1b29i0);
+
+
+
+
+
+
+
+
+    HalfAdder(a=s1b2i0, b=c1b1i0, sum=s2b2i0, carry=c2b2i0);
+
+    CSA3to2(a=s1b3i0, b=pa3b0, c=c1b2i0, sum=s2b3i0, carry=c2b3i0);
+
+    CSA3to2(a=s1b4i0, b=s1b4i1, c=c1b3i0, sum=s2b4i0, carry=c2b4i0);
+
+    CSA3to2(a=s1b5i0, b=s1b5i1, c=c1b4i0, sum=s2b5i0, carry=c2b5i0);
+
+    CSA3to2(a=s1b6i0, b=s1b6i1, c=pa6b0, sum=s2b6i0, carry=c2b6i0);
+    HalfAdder(a=c1b5i0, b=c1b5i1, sum=s2b6i1, carry=c2b6i1);
+
+    CSA3to2(a=s1b7i0, b=s1b7i1, c=s1b7i2, sum=s2b7i0, carry=c2b7i0);
+    HalfAdder(a=c1b6i0, b=c1b6i1, sum=s2b7i1, carry=c2b7i1);
+
+    CSA3to2(a=s1b8i0, b=s1b8i1, c=s1b8i2, sum=s2b8i0, carry=c2b8i0);
+    CSA3to2(a=c1b7i0, b=c1b7i1, c=c1b7i2, sum=s2b8i1, carry=c2b8i1);
+
+    CSA3to2(a=s1b9i0, b=s1b9i1, c=s1b9i2, sum=s2b9i0, carry=c2b9i0);
+    CSA3to2(a=pa9b0, b=c1b8i0, c=c1b8i1, sum=s2b9i1, carry=c2b9i1);
+
+    CSA3to2(a=s1b10i0, b=s1b10i1, c=s1b10i2, sum=s2b10i0, carry=c2b10i0);
+    CSA3to2(a=s1b10i3, b=c1b9i0, c=c1b9i1, sum=s2b10i1, carry=c2b10i1);
+
+    CSA3to2(a=s1b11i0, b=s1b11i1, c=s1b11i2, sum=s2b11i0, carry=c2b11i0);
+    CSA3to2(a=s1b11i3, b=c1b10i0, c=c1b10i1, sum=s2b11i1, carry=c2b11i1);
+    HalfAdder(a=c1b10i2, b=c1b10i3, sum=s2b11i2, carry=c2b11i2);
+
+    CSA3to2(a=s1b12i0, b=s1b12i1, c=s1b12i2, sum=s2b12i0, carry=c2b12i0);
+    CSA3to2(a=s1b12i3, b=pa12b0, c=c1b11i0, sum=s2b12i1, carry=c2b12i1);
+    CSA3to2(a=c1b11i1, b=c1b11i2, c=c1b11i3, sum=s2b12i2, carry=c2b12i2);
+
+    CSA3to2(a=s1b13i0, b=s1b13i1, c=s1b13i2, sum=s2b13i0, carry=c2b13i0);
+    CSA3to2(a=s1b13i3, b=s1b13i4, c=c1b12i0, sum=s2b13i1, carry=c2b13i1);
+    CSA3to2(a=c1b12i1, b=c1b12i2, c=c1b12i3, sum=s2b13i2, carry=c2b13i2);
+
+    CSA3to2(a=s1b14i0, b=s1b14i1, c=s1b14i2, sum=s2b14i0, carry=c2b14i0);
+    CSA3to2(a=s1b14i3, b=s1b14i4, c=c1b13i0, sum=s2b14i1, carry=c2b14i1);
+    CSA3to2(a=c1b13i1, b=c1b13i2, c=c1b13i3, sum=s2b14i2, carry=c2b14i2);
+
+    CSA3to2(a=s1b15i0, b=s1b15i1, c=s1b15i2, sum=s2b15i0, carry=c2b15i0);
+    CSA3to2(a=s1b15i3, b=s1b15i4, c=pa15b0, sum=s2b15i1, carry=c2b15i1);
+    CSA3to2(a=c1b14i0, b=c1b14i1, c=c1b14i2, sum=s2b15i2, carry=c2b15i2);
+    HalfAdder(a=c1b14i3, b=c1b14i4, sum=s2b15i3, carry=c2b15i3);
+
+    CSA3to2(a=s1b16i0, b=s1b16i1, c=s1b16i2, sum=s2b16i0, carry=c2b16i0);
+    CSA3to2(a=s1b16i3, b=s1b16i4, c=c1b15i0, sum=s2b16i1, carry=c2b16i1);
+    CSA3to2(a=c1b15i1, b=c1b15i2, c=c1b15i3, sum=s2b16i2, carry=c2b16i2);
+
+    CSA3to2(a=s1b17i0, b=s1b17i1, c=s1b17i2, sum=s2b17i0, carry=c2b17i0);
+    CSA3to2(a=s1b17i3, b=s1b17i4, c=c1b16i0, sum=s2b17i1, carry=c2b17i1);
+    CSA3to2(a=c1b16i1, b=c1b16i2, c=c1b16i3, sum=s2b17i2, carry=c2b17i2);
+
+    CSA3to2(a=s1b18i0, b=s1b18i1, c=s1b18i2, sum=s2b18i0, carry=c2b18i0);
+    CSA3to2(a=s1b18i3, b=pa15b3, c=c1b17i0, sum=s2b18i1, carry=c2b18i1);
+    CSA3to2(a=c1b17i1, b=c1b17i2, c=c1b17i3, sum=s2b18i2, carry=c2b18i2);
+
+    CSA3to2(a=s1b19i0, b=s1b19i1, c=s1b19i2, sum=s2b19i0, carry=c2b19i0);
+    CSA3to2(a=s1b19i3, b=c1b18i0, c=c1b18i1, sum=s2b19i1, carry=c2b19i1);
+    HalfAdder(a=c1b18i2, b=c1b18i3, sum=s2b19i2, carry=c2b19i2);
+
+    CSA3to2(a=s1b20i0, b=s1b20i1, c=s1b20i2, sum=s2b20i0, carry=c2b20i0);
+    CSA3to2(a=s1b20i3, b=c1b19i0, c=c1b19i1, sum=s2b20i1, carry=c2b20i1);
+    HalfAdder(a=c1b19i2, b=c1b19i3, sum=s2b20i2, carry=c2b20i2);
+
+    CSA3to2(a=s1b21i0, b=s1b21i1, c=s1b21i2, sum=s2b21i0, carry=c2b21i0);
+    CSA3to2(a=pa15b6, b=c1b20i0, c=c1b20i1, sum=s2b21i1, carry=c2b21i1);
+    HalfAdder(a=c1b20i2, b=c1b20i3, sum=s2b21i2, carry=c2b21i2);
+
+    CSA3to2(a=s1b22i0, b=s1b22i1, c=s1b22i2, sum=s2b22i0, carry=c2b22i0);
+    CSA3to2(a=c1b21i0, b=c1b21i1, c=c1b21i2, sum=s2b22i1, carry=c2b22i1);
+
+    CSA3to2(a=s1b23i0, b=s1b23i1, c=s1b23i2, sum=s2b23i0, carry=c2b23i0);
+    CSA3to2(a=c1b22i0, b=c1b22i1, c=c1b22i2, sum=s2b23i1, carry=c2b23i1);
+
+    CSA3to2(a=s1b24i0, b=s1b24i1, c=pa15b9, sum=s2b24i0, carry=c2b24i0);
+    CSA3to2(a=c1b23i0, b=c1b23i1, c=c1b23i2, sum=s2b24i1, carry=c2b24i1);
+
+    CSA3to2(a=s1b25i0, b=s1b25i1, c=c1b24i0, sum=s2b25i0, carry=c2b25i0);
+
+    CSA3to2(a=s1b26i0, b=s1b26i1, c=c1b25i0, sum=s2b26i0, carry=c2b26i0);
+
+    CSA3to2(a=s1b27i0, b=pa15b12, c=c1b26i0, sum=s2b27i0, carry=c2b27i0);
+    HalfAdder(a=s1b28i0, b=c1b27i0, sum=s2b28i0, carry=c2b28i0);
+
+    HalfAdder(a=s1b29i0, b=c1b28i0, sum=s2b29i0, carry=c2b29i0);
+
+    HalfAdder(a=pa15b15, b=c1b29i0, sum=s2b30i0, carry=c2b30i0);
+
+
+
+
+
+
+
+
+    HalfAdder(a=s2b3i0, b=c2b2i0, sum=s3b3i0, carry=c3b3i0);
+
+    HalfAdder(a=s2b4i0, b=c2b3i0, sum=s3b4i0, carry=c3b4i0);
+
+    CSA3to2(a=s2b5i0, b=c1b4i1, c=c2b4i0, sum=s3b5i0, carry=c3b5i0);
+
+    CSA3to2(a=s2b6i0, b=s2b6i1, c=c2b5i0, sum=s3b6i0, carry=c3b6i0);
+
+    CSA3to2(a=s2b7i0, b=s2b7i1, c=c2b6i0, sum=s3b7i0, carry=c3b7i0);
+
+    CSA3to2(a=s2b8i0, b=s2b8i1, c=c2b7i0, sum=s3b8i0, carry=c3b8i0);
+
+    CSA3to2(a=s2b9i0, b=s2b9i1, c=c1b8i2, sum=s3b9i0, carry=c3b9i0);
+    HalfAdder(a=c2b8i0, b=c2b8i1, sum=s3b9i1, carry=c3b9i1);
+
+    CSA3to2(a=s2b10i0, b=s2b10i1, c=c1b9i2, sum=s3b10i0, carry=c3b10i0);
+    HalfAdder(a=c2b9i0, b=c2b9i1, sum=s3b10i1, carry=c3b10i1);
+
+    CSA3to2(a=s2b11i0, b=s2b11i1, c=s2b11i2, sum=s3b11i0, carry=c3b11i0);
+    HalfAdder(a=c2b10i0, b=c2b10i1, sum=s3b11i1, carry=c3b11i1);
+
+    CSA3to2(a=s2b12i0, b=s2b12i1, c=s2b12i2, sum=s3b12i0, carry=c3b12i0);
+    CSA3to2(a=c2b11i0, b=c2b11i1, c=c2b11i2, sum=s3b12i1, carry=c3b12i1);
+
+    CSA3to2(a=s2b13i0, b=s2b13i1, c=s2b13i2, sum=s3b13i0, carry=c3b13i0);
+    CSA3to2(a=c2b12i0, b=c2b12i1, c=c2b12i2, sum=s3b13i1, carry=c3b13i1);
+
+    CSA3to2(a=s2b14i0, b=s2b14i1, c=s2b14i2, sum=s3b14i0, carry=c3b14i0);
+    CSA3to2(a=c1b13i4, b=c2b13i0, c=c2b13i1, sum=s3b14i1, carry=c3b14i1);
+
+    CSA3to2(a=s2b15i0, b=s2b15i1, c=s2b15i2, sum=s3b15i0, carry=c3b15i0);
+    CSA3to2(a=s2b15i3, b=c2b14i0, c=c2b14i1, sum=s3b15i1, carry=c3b15i1);
+
+    CSA3to2(a=s2b16i0, b=s2b16i1, c=s2b16i2, sum=s3b16i0, carry=c3b16i0);
+    CSA3to2(a=c1b15i4, b=c2b15i0, c=c2b15i1, sum=s3b16i1, carry=c3b16i1);
+    HalfAdder(a=c2b15i2, b=c2b15i3, sum=s3b16i2, carry=c3b16i2);
+
+    CSA3to2(a=s2b17i0, b=s2b17i1, c=s2b17i2, sum=s3b17i0, carry=c3b17i0);
+    CSA3to2(a=c1b16i4, b=c2b16i0, c=c2b16i1, sum=s3b17i1, carry=c3b17i1);
+
+    CSA3to2(a=s2b18i0, b=s2b18i1, c=s2b18i2, sum=s3b18i0, carry=c3b18i0);
+    CSA3to2(a=c1b17i4, b=c2b17i0, c=c2b17i1, sum=s3b18i1, carry=c3b18i1);
+
+    CSA3to2(a=s2b19i0, b=s2b19i1, c=s2b19i2, sum=s3b19i0, carry=c3b19i0);
+    CSA3to2(a=c1b18i3, b=c2b18i0, c=c2b18i1, sum=s3b19i1, carry=c3b19i1);
+
+    CSA3to2(a=s2b20i0, b=s2b20i1, c=s2b20i2, sum=s3b20i0, carry=c3b20i0);
+    CSA3to2(a=c2b19i0, b=c2b19i1, c=c2b19i2, sum=s3b20i1, carry=c3b20i1);
+
+    CSA3to2(a=s2b21i0, b=s2b21i1, c=s2b21i2, sum=s3b21i0, carry=c3b21i0);
+    CSA3to2(a=c2b20i0, b=c2b20i1, c=c2b20i2, sum=s3b21i1, carry=c3b21i1);
+
+    CSA3to2(a=s2b22i0, b=s2b22i1, c=c2b21i0, sum=s3b22i0, carry=c3b22i0);
+    HalfAdder(a=c2b21i1, b=c2b21i2, sum=s3b22i1, carry=c3b22i1);
+
+    CSA3to2(a=s2b23i0, b=s2b23i1, c=c2b22i0, sum=s3b23i0, carry=c3b23i0);
+
+    CSA3to2(a=s2b24i0, b=s2b24i1, c=c2b23i0, sum=s3b24i0, carry=c3b24i0);
+
+    CSA3to2(a=s2b25i0, b=c1b24i1, c=c2b24i0, sum=s3b25i0, carry=c3b25i0);
+
+    CSA3to2(a=s2b26i0, b=c1b25i1, c=c2b25i0, sum=s3b26i0, carry=c3b26i0);
+
+    CSA3to2(a=s2b27i0, b=c1b26i1, c=c2b26i0, sum=s3b27i0, carry=c3b27i0);
+
+    HalfAdder(a=s2b28i0, b=c2b27i0, sum=s3b28i0, carry=c3b28i0);
+
+    HalfAdder(a=s2b29i0, b=c2b28i0, sum=s3b29i0, carry=c3b29i0);
+
+    HalfAdder(a=s2b30i0, b=c2b29i0, sum=s3b30i0, carry=c3b30i0);
+
+
+   
+
+
+
+
+
+    HalfAdder(a=s3b4i0, b=c3b3i0, sum=s4b4i0, carry=c4b4i0);
+
+    HalfAdder(a=s3b5i0, b=c3b4i0, sum=s4b5i0, carry=c4b5i0);
+
+    HalfAdder(a=s3b6i0, b=c3b5i0, sum=s4b6i0, carry=c4b6i0);
+
+    CSA3to2(a=s3b7i0, b=c2b6i1, c=c3b6i0, sum=s4b7i0, carry=c4b7i0);
+
+    CSA3to2(a=s3b8i0, b=c2b7i1, c=c3b7i0, sum=s4b8i0, carry=c4b8i0);
+
+    CSA3to2(a=s3b9i0, b=s3b9i1, c=c3b8i0, sum=s4b9i0, carry=c4b9i0);
+
+    CSA3to2(a=s3b10i0, b=s3b10i1, c=c3b9i0, sum=s4b10i0, carry=c4b10i0);
+
+    CSA3to2(a=s3b11i0, b=s3b11i1, c=c3b10i0, sum=s4b11i0, carry=c4b11i0);
+
+    CSA3to2(a=s3b12i0, b=s3b12i1, c=c3b11i0, sum=s4b12i0, carry=c4b12i0);
+
+    CSA3to2(a=s3b13i0, b=s3b13i1, c=c3b12i0, sum=s4b13i0, carry=c4b13i0);
+
+    CSA3to2(a=s3b14i0, b=s3b14i1, c=c2b13i2, sum=s4b14i0, carry=c4b14i0);
+    HalfAdder(a=c3b13i0, b=c3b13i1, sum=s4b14i1, carry=c4b14i1);
+
+    CSA3to2(a=s3b15i0, b=s3b15i1, c=c2b14i2, sum=s4b15i0, carry=c4b15i0);
+    HalfAdder(a=c3b14i0, b=c3b14i1, sum=s4b15i1, carry=c4b15i1);
+
+    CSA3to2(a=s3b16i0, b=s3b16i1, c=s3b16i2, sum=s4b16i0, carry=c4b16i0);
+    HalfAdder(a=c3b15i0, b=c3b15i1, sum=s4b16i1, carry=c4b16i1);
+
+    CSA3to2(a=s3b17i0, b=s3b17i1, c=c2b16i2, sum=s4b17i0, carry=c4b17i0);
+    CSA3to2(a=c3b16i0, b=c3b16i1, c=c3b16i2, sum=s4b17i1, carry=c4b17i1);
+
+    CSA3to2(a=s3b18i0, b=s3b18i1, c=c2b17i2, sum=s4b18i0, carry=c4b18i0);
+    HalfAdder(a=c3b17i0, b=c3b17i1, sum=s4b18i1, carry=c4b18i1);
+
+    CSA3to2(a=s3b19i0, b=s3b19i1, c=c2b18i2, sum=s4b19i0, carry=c4b19i0);
+    HalfAdder(a=c3b18i0, b=c3b18i1, sum=s4b19i1, carry=c4b19i1);
+
+    CSA3to2(a=s3b20i0, b=s3b20i1, c=c3b19i0, sum=s4b20i0, carry=c4b20i0);
+
+    CSA3to2(a=s3b21i0, b=s3b21i1, c=c3b20i0, sum=s4b21i0, carry=c4b21i0);
+
+    CSA3to2(a=s3b22i0, b=s3b22i1, c=c3b21i0, sum=s4b22i0, carry=c4b22i0);
+
+    CSA3to2(a=s3b23i0, b=c2b22i1, c=c3b22i0, sum=s4b23i0, carry=c4b23i0);
+
+    CSA3to2(a=s3b24i0, b=c2b23i1, c=c3b23i0, sum=s4b24i0, carry=c4b24i0);
+
+    CSA3to2(a=s3b25i0, b=c2b24i1, c=c3b24i0, sum=s4b25i0, carry=c4b25i0);
+
+    HalfAdder(a=s3b26i0, b=c3b25i0, sum=s4b26i0, carry=c4b26i0);
+
+    HalfAdder(a=s3b27i0, b=c3b26i0, sum=s4b27i0, carry=c4b27i0);
+
+    HalfAdder(a=s3b28i0, b=c3b27i0, sum=s4b28i0, carry=c4b28i0);
+
+    HalfAdder(a=s3b29i0, b=c3b28i0, sum=s4b29i0, carry=c4b29i0);
+
+    HalfAdder(a=s3b30i0, b=c3b29i0, sum=s4b30i0, carry=c4b30i0);
+
+    HalfAdder(a=c2b30i0, b=c3b30i0, sum=s4b31i0, carry=c4b31i0);
+
+
+
+
+
+
+
+    CSA3to2(a=s4b10i0, b=c3b9i1, c=c4b9i0, sum=s5b10i0, carry=c5b10i0);
+
+    CSA3to2(a=s4b11i0, b=c3b10i1, c=c4b10i0, sum=s5b11i0, carry=c5b11i0);
+
+    CSA3to2(a=s4b12i0, b=c3b11i1, c=c4b11i0, sum=s5b12i0, carry=c5b12i0);
+
+    CSA3to2(a=s4b13i0, b=c3b12i1, c=c4b12i0, sum=s5b13i0, carry=c5b13i0);
+
+    CSA3to2(a=s4b14i0, b=s4b14i1, c=c4b13i0, sum=s5b14i0, carry=c5b14i0);
+
+    CSA3to2(a=s4b15i0, b=s4b15i1, c=c4b14i0, sum=s5b15i0, carry=c5b15i0);
+
+    CSA3to2(a=s4b16i0, b=s4b16i1, c=c4b15i0, sum=s5b16i0, carry=c5b16i0);
+
+    CSA3to2(a=s4b17i0, b=s4b17i1, c=c4b16i0, sum=s5b17i0, carry=c5b17i0);
+
+    CSA3to2(a=s4b18i0, b=s4b18i1, c=c4b17i0, sum=s5b18i0, carry=c5b18i0);
+
+    CSA3to2(a=s4b19i0, b=s4b19i1, c=c4b18i0, sum=s5b19i0, carry=c5b19i0);
+
+    CSA3to2(a=s4b20i0, b=c3b19i1, c=c4b19i0, sum=s5b20i0, carry=c5b20i0);
+
+    CSA3to2(a=s4b21i0, b=c3b20i1, c=c4b20i0, sum=s5b21i0, carry=c5b21i0);
+
+    CSA3to2(a=s4b22i0, b=c3b21i1, c=c4b21i0, sum=s5b22i0, carry=c5b22i0);
+
+    CSA3to2(a=s4b23i0, b=c3b22i1, c=c4b22i0, sum=s5b23i0, carry=c5b23i0);
+
+    HalfAdder(a=s4b24i0, b=c4b23i0, sum=s5b24i0, carry=c5b24i0);
+
+    HalfAdder(a=s4b25i0, b=c4b24i0, sum=s5b25i0, carry=c5b25i0);
+
+    HalfAdder(a=s4b26i0, b=c4b25i0, sum=s5b26i0, carry=c5b26i0);
+
+    HalfAdder(a=s4b27i0, b=c4b26i0, sum=s5b27i0, carry=c5b27i0);
+
+    HalfAdder(a=s4b28i0, b=c4b27i0, sum=s5b28i0, carry=c5b28i0);
+
+    HalfAdder(a=s4b29i0, b=c4b28i0, sum=s5b29i0, carry=c5b29i0);
+
+    HalfAdder(a=s4b30i0, b=c4b29i0, sum=s5b30i0, carry=c5b30i0);
+
+    HalfAdder(a=s4b31i0, b=c4b30i0, sum=s5b31i0, carry=c5b31i0);
+
+
+
+
+
+
+
+    CSA3to2(a=s5b15i0, b=c5b14i0, c=c4b14i1, sum=s6b15i0, carry=c6b15i0);
+
+    CSA3to2(a=s5b16i0, b=c5b15i0, c=c4b15i1, sum=s6b16i0, carry=c6b16i0);
+
+    CSA3to2(a=s5b17i0, b=c5b16i0, c=c4b16i1, sum=s6b17i0, carry=c6b17i0);
+
+    CSA3to2(a=s5b18i0, b=c5b17i0, c=c4b17i1, sum=s6b18i0, carry=c6b18i0);
+
+    CSA3to2(a=s5b19i0, b=c5b18i0, c=c4b18i1, sum=s6b19i0, carry=c6b19i0);
+
+    CSA3to2(a=s5b20i0, b=c5b19i0, c=c4b19i1, sum=s6b20i0, carry=c6b20i0);
+
+    CSA3to2(a=s5b21i0, b=c5b20i0, c=c6b20i0, sum=s6b21i0, carry=c6b21i0);
+
+    CSA3to2(a=s5b22i0, b=c5b21i0, c=c6b21i0, sum=s6b22i0, carry=c6b22i0);
+
+    CSA3to2(a=s5b23i0, b=c5b22i0, c=c6b22i0, sum=s6b23i0, carry=c6b23i0);
+
+    CSA3to2(a=s5b24i0, b=c5b23i0, c=c6b23i0, sum=s6b24i0, carry=c6b24i0);
+
+    CSA3to2(a=s5b25i0, b=c5b24i0, c=c6b24i0, sum=s6b25i0, carry=c6b25i0);
+
+    CSA3to2(a=s5b26i0, b=c5b25i0, c=c6b25i0, sum=s6b26i0, carry=c6b26i0);
+
+    CSA3to2(a=s5b27i0, b=c5b26i0, c=c6b26i0, sum=s6b27i0, carry=c6b27i0);
+
+    CSA3to2(a=s5b28i0, b=c5b27i0, c=c6b27i0, sum=s6b28i0, carry=c6b28i0);
+
+    CSA3to2(a=s5b29i0, b=c5b28i0, c=c6b28i0, sum=s6b29i0, carry=c6b29i0);
+
+    CSA3to2(a=s5b30i0, b=c5b29i0, c=c6b29i0, sum=s6b30i0, carry=c6b30i0);
+
+    CSA3to2(a=s5b31i0, b=c5b30i0, c=c6b30i0, sum=s6b31i0, carry=c6b31i0);
+
+
+    Adder16(
+        a[0] =pa0b0,   a[1] =s1b1i0,  a[2] =s2b2i0,  a[3] =s3b3i0,
+        a[4] =s4b4i0,  a[5] =s4b5i0,  a[6] =s4b6i0,  a[7] =s4b7i0,
+        a[8] =s4b8i0,  a[9] =s4b9i0,  a[10]=s5b10i0, a[11]=s5b11i0,
+        a[12]=s5b12i0, a[13]=s5b13i0, a[14]=s5b14i0, a[15]=s6b15i0,
+
+        b[0] =false,   b[1] =false,   b[2] =false,   b[3] =false,
+        b[4] =false,   b[5] =c4b4i0,  b[6] =c4b5i0,  b[7] =c4b6i0,
+        b[8] =c4b7i0,  b[9] =c4b8i0,  b[10]=false,   b[11]=c5b10i0,
+        b[12]=c5b11i0, b[13]=c5b12i0, b[14]=c5b13i0, b[15]=c5b14i0,
+
+        cin=false,
+        out=low,
+        carry=carrylowtohigh
+    );
+
+    Adder16(
+    	a[0] =s6b16i0, a[1] =s6b17i0, a[2] =s6b18i0, a[3] =s6b19i0,
+    	a[4] =s6b20i0, a[5] =s6b21i0, a[6] =s6b22i0, a[7] =s6b23i0,
+    	a[8] =s6b24i0, a[9] =s6b25i0, a[10]=s6b26i0, a[11]=s6b27i0,
+    	a[12]=s6b28i0, a[13]=s6b29i0, a[14]=s6b30i0, a[15]=s6b31i0,
+
+    	b[0] =c6b15i0, b[1] =c6b16i0, b[2] =c6b17i0, b[3] =c6b18i0,
+    	b[4] =c6b19i0, b[5] =c6b20i0, b[6] =c6b21i0, b[7] =c6b22i0,
+    	b[8] =c6b23i0, b[9] =c6b24i0, b[10]=c6b25i0, b[11]=c6b26i0,
+    	b[12]=c6b27i0, b[13]=c6b28i0, b[14]=c6b29i0, b[15]=c6b30i0,
+
+    	cin=carrylowtohigh,
+    	out=high
+    );
+
+}

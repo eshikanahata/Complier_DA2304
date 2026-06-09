@@ -1,0 +1,4 @@
+function Sys.init 0
+call exercise_1.main 0
+label END_SYS
+goto END_SYS

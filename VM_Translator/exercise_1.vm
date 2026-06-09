@@ -1,0 +1,317 @@
+function exercise_1.main 0
+push constant 2
+push constant 3
+push constant 3
+push constant 2
+push constant 2
+push constant 2
+call exercise_1.sanity_check 6
+push static 0
+push constant 1
+neg
+eq
+if-goto ERROR_MAIN
+push constant 4000
+push constant 2
+push constant 3
+push constant 5000
+push constant 3
+push constant 2
+push constant 6000
+call exercise_1.matmul 7
+pop temp 0         
+push constant 6000
+push constant 3000
+push constant 2
+push constant 2
+call exercise_1.addbias 4
+pop temp 0
+
+label SUCCESS
+goto SUCCESS
+
+label ERROR_MAIN
+goto ERROR_MAIN
+
+
+function exercise_1.sanity_check 0
+push argument 1
+push argument 2
+eq
+if-goto CHECK_2
+goto ERROR
+
+label CHECK_2
+push argument 4
+push argument 0
+eq
+if-goto CHECK_3
+goto ERROR
+
+label CHECK_3
+push argument 5
+push argument 3
+eq
+if-goto PASSED
+goto ERROR
+
+label ERROR
+push constant 1
+neg
+pop static 0
+push constant 1
+neg
+return
+
+label PASSED
+push constant 1
+pop static 0
+push constant 0
+return
+
+
+function exercise_1.matmul 4
+push constant 0
+pop local 0 
+label LOOP_OVER_I
+push local 0
+push argument 1
+lt
+if-goto J_CHUNK
+goto MATMUL_END
+
+label J_CHUNK
+push constant 0
+pop local 1
+label LOOP_OVER_J
+push local 1
+push argument 5
+lt
+if-goto K_CHUNK
+push local 0
+push constant 1
+add
+pop local 0
+goto LOOP_OVER_I
+
+label K_CHUNK
+push constant 0
+pop local 3
+push constant 0
+pop local 2
+label LOOP_OVER_K
+push local 2
+push argument 2
+lt
+if-goto DOT_PRODUCT
+push local 0
+push argument 5
+call exercise_1.multiply 2
+push local 1
+add
+push argument 6
+add
+pop pointer 1
+push local 3
+pop that 0
+push local 1
+push constant 1
+add
+pop local 1
+goto LOOP_OVER_J
+
+label DOT_PRODUCT
+push local 0
+push argument 2
+call exercise_1.multiply 2
+push local 2
+add
+push argument 0
+add
+pop pointer 1
+push that 0
+push local 2
+push argument 5
+call exercise_1.multiply 2
+push local 1
+add
+push argument 3
+add
+pop pointer 1
+push that 0
+call exercise_1.multiply 2
+push local 3
+add
+pop local 3
+push local 2
+push constant 1
+add
+pop local 2
+goto LOOP_OVER_K
+
+label MATMUL_END
+push constant 0
+return
+
+
+function exercise_1.addbias 2  
+push argument 2
+push argument 3
+call exercise_1.multiply 2
+pop local 0
+push constant 0
+pop local 1
+
+label BIAS
+push local 1
+push local 0
+lt
+if-goto ADD_FUNC
+push constant 0
+return
+
+label ADD_FUNC
+push argument 1
+push local 1
+add
+pop pointer 1
+push that 0
+push argument 0
+push local 1
+add
+pop pointer 1
+push that 0
+add
+push argument 0
+push local 1
+add
+pop pointer 1
+pop that 0
+push local 1
+push constant 1
+add
+pop local 1
+goto BIAS
+
+
+function exercise_1.row_col 2
+push constant 0
+pop local 0
+push constant 0
+pop local 1
+
+label DOT_PROD_LOOP
+push local 1
+push argument 2
+lt
+if-goto DOT_PROD
+push local 0
+return
+
+label DOT_PROD
+push argument 0
+push local 1
+add
+pop pointer 1
+push that 0
+push local 1
+push argument 3
+call exercise_1.multiply 2
+push argument 1
+add
+pop pointer 1
+push that 0
+call exercise_1.multiply 2
+push local 0
+add
+pop local 0
+
+push local 1
+push constant 1
+add
+pop local 1
+goto DOT_PROD_LOOP
+
+
+function exercise_1.rowcol 3
+push constant 0
+pop local 0
+
+label LOOP_OVER_I
+push local 0
+push argument 1
+lt
+if-goto J_CHUNK
+push constant 0
+return
+
+label J_CHUNK
+push constant 0
+pop local 1
+
+label LOOP_OVER_J
+push local 1
+push argument 5
+lt
+if-goto CALL_SUBROUTINE
+push local 0
+push constant 1
+add
+pop local 0
+goto LOOP_OVER_I
+
+label CALL_SUBROUTINE
+push local 0
+push argument 2
+call exercise_1.multiply 2
+push argument 0
+add
+push argument 3
+push local 1
+add
+push argument 2
+push argument 5
+call exercise_1.row_col 4
+pop local 2
+push local 0
+push argument 5
+call exercise_1.multiply 2
+push local 1
+add
+push argument 6
+add
+pop pointer 1
+push local 2
+pop that 0
+
+push local 1
+push constant 1
+add
+pop local 1
+goto LOOP_OVER_J
+
+
+function exercise_1.multiply 2
+push argument 1
+pop local 1             
+push constant 0
+pop local 0
+
+label LOOP_START
+push local 1
+push constant 0
+eq
+if-goto LOOP_END        
+push local 0
+push argument 0
+add
+pop local 0             
+push local 1
+push constant 1
+sub
+pop local 1             
+goto LOOP_START
+
+label LOOP_END
+push local 0
+return

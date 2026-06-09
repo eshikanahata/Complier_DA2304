@@ -1,0 +1,23 @@
+CHIP Register_16_Bit {
+    IN in[16], load;
+    OUT out[16];
+    
+    PARTS:
+    
+    Register_1_Bit(in = in[0], load = load, out = out[0]);
+    Register_1_Bit(in = in[1], load = load, out = out[1]);
+    Register_1_Bit(in = in[2], load = load, out = out[2]);
+    Register_1_Bit(in = in[3], load = load, out = out[3]);
+    Register_1_Bit(in = in[4], load = load, out = out[4]);
+    Register_1_Bit(in = in[5], load = load, out = out[5]);
+    Register_1_Bit(in = in[6], load = load, out = out[6]);
+    Register_1_Bit(in = in[7], load = load, out = out[7]);
+    Register_1_Bit(in = in[8], load = load, out = out[8]);
+    Register_1_Bit(in = in[9], load = load, out = out[9]);
+    Register_1_Bit(in = in[10], load = load, out = out[10]);
+    Register_1_Bit(in = in[11], load = load, out = out[11]);
+    Register_1_Bit(in = in[12], load = load, out = out[12]);
+    Register_1_Bit(in = in[13], load = load, out = out[13]);
+    Register_1_Bit(in = in[14], load = load, out = out[14]);
+    Register_1_Bit(in = in[15], load = load, out = out[15]);
+}

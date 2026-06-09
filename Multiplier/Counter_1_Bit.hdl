@@ -1,0 +1,8 @@
+CHIP Counter_1_Bit {
+    OUT out;
+    
+    PARTS:
+    Not(in = regout, out = sum);
+    Register_1_Bit(in = sum, load = true, out = out, out = regout);
+}
+

@@ -1,0 +1,9 @@
+CHIP Register_1_Bit {
+    IN in, load;
+    OUT out;
+    
+    PARTS:
+    Mux(a = tempout, b = in , sel = load, out = muxout);
+    Dff(in = muxout, out = out, out = tempout);
+}
+

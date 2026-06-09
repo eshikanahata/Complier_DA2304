@@ -1,0 +1,62 @@
+class Main {
+    function void main() {
+        var Array filterVals;
+        var Array input5x5;
+        var Array input9x9;
+        var Conv conv5;
+        var Conv conv9;
+        var int i;
+
+        let filterVals = Array.new(9);
+        let filterVals[0] = 0;
+        let filterVals[1] = 0;
+        let filterVals[2] = 0;
+        let filterVals[3] = 0;
+        let filterVals[4] = 1;
+        let filterVals[5] = 0;
+        let filterVals[6] = 0;
+        let filterVals[7] = 0;
+        let filterVals[8] = 0;
+
+        let input5x5 = Array.new(25);
+        let i = 0;
+        while (i < 25) {
+            let input5x5[i] = i;
+            let i = i + 1;
+        }
+
+        do Output.printString("5x5 input with stride 1");
+        do Output.println();
+        
+        let conv5 = Conv.new(5, 1);
+        do conv5.initFilter(filterVals);
+        do conv5.getArrayInput(input5x5, 5);
+        do conv5.conv2d();
+        do conv5.printOutput();
+        do conv5.dispose();
+
+        do Output.println();
+        do Output.printString("9x9 input with stride 2");
+        do Output.println();
+
+        let input9x9 = Array.new(81);
+        let i = 0;
+        while (i < 81) {
+            let input9x9[i] = i;
+            let i = i + 1;
+        }
+
+        let conv9 = Conv.new(9, 2);
+        do conv9.initFilter(filterVals);
+        do conv9.getArrayInput(input9x9, 9);
+        do conv9.conv2d();
+        do conv9.printOutput();
+        do conv9.dispose(); 
+
+        do filterVals.dispose();
+        do input5x5.dispose();
+        do input9x9.dispose();
+
+        return;
+    }
+}

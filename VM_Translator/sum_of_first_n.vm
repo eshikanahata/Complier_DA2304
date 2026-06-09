@@ -1,0 +1,27 @@
+push constant 6
+call sum_of_first_n.op 1
+
+label END_FINAL
+goto END_FINAL
+function sum_of_first_n.op 1
+push constant 0
+pop local 0
+
+label LOOP
+push argument 0
+push constant 0
+eq
+if-goto END_SUM
+push local 0
+push argument 0
+add
+pop local 0
+push argument 0
+push constant 1
+sub
+pop argument 0
+goto LOOP
+
+label END_SUM
+push local 0
+return
